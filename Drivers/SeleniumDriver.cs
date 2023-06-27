@@ -10,11 +10,12 @@ namespace ToolbarTests.Drivers
 {
     public class SeleniumDriver
     {
-
-        public static IWebDriver driver = new ChromeDriver();
         private readonly ScenarioContext _scenarioContext;
 
-        public SeleniumDriver(ScenarioContext scenarioContext) => _scenarioContext = scenarioContext;
+        public SeleniumDriver(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+        } 
         
         public IWebDriver SetUp()
         {
@@ -25,12 +26,8 @@ namespace ToolbarTests.Drivers
                 "no-sandbox",
                 "start-maximixed"
                 );
-            chromeOptions.AddExtensions("C:/Users/bibinabraham/Downloads/tcb-de-1.1.0.1-chrome.crx");
-            chromeOptions.AddAdditionalChromeOption("useAutomationExtension", false);
-            _scenarioContext.Set(driver, "webDriver");
-            //driver.Manage().Window.Maximize();
+            chromeOptions.AddExtensions("C:/Users/bibin/Downloads/extension_3_5_0_1.crx");
             return new ChromeDriver(chromeOptions);
-
         }
     }
 }

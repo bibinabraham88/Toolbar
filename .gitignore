@@ -50,3 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#Test Results and files
+[Tt]est[Rr]esult*
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+
+#Tools
+_ReSharper*/
+*.resharper
+
+#Temp files
+~$*

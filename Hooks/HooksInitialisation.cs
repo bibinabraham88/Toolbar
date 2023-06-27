@@ -2,6 +2,10 @@
 using TechTalk.SpecFlow;
 using ToolbarTests.Drivers;
 using OpenQA.Selenium;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace ToolbarTests.Hooks
 {
@@ -9,29 +13,38 @@ namespace ToolbarTests.Hooks
     public class HooksInitialisation
     {
         private readonly ScenarioContext _scenarioContext;
-        private IWebDriver driver;
+        private IWebDriver _driver;
         private readonly SeleniumDriver _seleniumDriver;
 
         public HooksInitialisation(ScenarioContext scenarioContext,
             SeleniumDriver seleniumDriver)
         {
             _scenarioContext = scenarioContext;
-            _seleniumDriver = seleniumDriver;
+            _seleniumDriver = seleniumDriver; 
         }
             
 
         [BeforeScenario]
         public void BeforeScenario()
         {
-            _scenarioContext.Set(driver, "webDriver");
-            _seleniumDriver.SetUp();
+            _driver = _seleniumDriver.SetUp();
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            Thread.Sleep(1000);
+            var newWindowHandle = _driver.WindowHandles[1];
+            if (_driver.WindowHandles.Count==2)
+            {
+                _driver.SwitchTo().Window(newWindowHandle);
+                _driver.Close();
+            }
+            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+            
+            _scenarioContext.Set(_driver);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            driver = _scenarioContext.Get<IWebDriver>("webDriver");
-            driver.Quit();
+            _driver.Quit();
             Console.WriteLine("Browser was closed successfully");
         }
     }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace ToolbarTests.Steps
@@ -10,32 +11,27 @@ namespace ToolbarTests.Steps
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
         private readonly ScenarioContext _scenarioContext;
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
-        public tcbExtensionSteps(ScenarioContext scenarioContext)
+        public tcbExtensionSteps(ScenarioContext scenarioContext )
         {
             _scenarioContext = scenarioContext;
+            _driver = _scenarioContext.Get<IWebDriver>();
+
         }
 
-        [Given(@"I open the chrome browser")]
-        public void GivenIOpenTheChromeBrowser()
-        {
-            driver = _scenarioContext.Get<IWebDriver>("webDriver");
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("window.postMessage('clicked_browser_action', '*')");
-            driver.Navigate().GoToUrl("https://www.google.com");
-        }
-
-        [When(@"I try to open the toolbar extesion")]
+        [Given(@"I try to open the toolbar extesion")]
         public void WhenITryToOpenTheToolbarExtesion()
         {
+            _driver.Navigate().GoToUrl("chrome-extension://ekeeeebmbhkkjcaoicinbdjmklipppkj/popup.html");
             
         }
 
-        [Then(@"I should see the toolbar pop up")]
+        [When(@"I click on join button")]
         public void ThenIShouldSeeTheToolbarPopUp()
         {
-            
+
+            _driver.FindElement(By.CssSelector(".cta.welcome__button")).Click();
         }
 
     }
