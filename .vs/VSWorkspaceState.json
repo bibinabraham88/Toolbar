@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Features"
+    "\\Drivers",
+    "\\Features",
+    "\\Hooks",
+    "\\Steps"
   ],
-  "SelectedNode": "\\ToolbarTests.csproj",
+  "SelectedNode": "\\ToolbarTests.sln",
   "PreviewInSolutionExplorer": false
 }
