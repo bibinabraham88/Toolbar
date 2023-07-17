@@ -28,9 +28,9 @@ namespace ToolbarTests.Steps
         public void WhenITryToOpenTheToolbarExtesion()
         {
 
-            // _driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
+             _driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
             //DE
-             _driver.Navigate().GoToUrl("chrome-extension://iljjkgoaeinkkmleckfmjcfdhlbnjfmo/popup.html");
+            // _driver.Navigate().GoToUrl("chrome-extension://iljjkgoaeinkkmleckfmjcfdhlbnjfmo/popup.html");
             //US
              //  _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");            
 
@@ -81,7 +81,7 @@ namespace ToolbarTests.Steps
         [Then(@"I try to open again toolbar extesion")]
         public void ThenITryToOpenAgainToolbarExtesion()
         {
-            _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
+            _driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
             _driver.Navigate().Refresh();
         }
         [Then(@"I click on My account")]
@@ -98,17 +98,30 @@ namespace ToolbarTests.Steps
             _driver.FindElement(By.XPath("//body/div/div/div[2]/div[2]")).Click();
         }
 
-        [When(@"I refresh page")]
-        public void WhenIRefreshPage()
-        {
-            _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
-            _driver.Navigate().Refresh();
-        }
+       
         [Given(@"I try to open again toolbar extesion")]
         public void GivenITryToOpenAgainToolbarExtesion()
         {
-            _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
+            _driver.Navigate().GoToUrl("chrome-extension://iljjkgoaeinkkmleckfmjcfdhlbnjfmo/popup.html");
              _driver.Navigate().Refresh();
+        }
+        
+        [Then(@"I try to serach mearchant ""(.*)""")]
+        public void ThenITryToSerachMearchant(string mearchant)
+        {
+            System.Threading.Thread.Sleep(2000);
+            _driver.FindElement(By.XPath("//body/div/div/div[1]/div[3]/div[1]/div/div[1]/input")).SendKeys("nike");
+        }
+        [Then(@"I click on nike mearchnat")]
+        public void ThenIClickOnNikeMearchnat()
+        {
+            _driver.FindElement(By.XPath("//body/div/div/div[1]/div[3]/div[1]/div/div[1]/div[2]/div[1]/span[1]/span")).Click();
+        }
+        [Then(@"I able to click on recently visited")]
+        public void ThenIAbleToClickOnRecentlyVisited()
+        {
+             System.Threading.Thread.Sleep(2000);
+            _driver.FindElement(By.XPath("//body/div/div/div[1]/div[2]/div[2]")).Click();
         }
 
 

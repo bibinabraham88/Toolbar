@@ -32,9 +32,9 @@ namespace ToolbarTests.Drivers
                   "no-sandbox",
                  "start-maximixed"
                  );
-            // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-3.6.0.0-QA-chrome.crx");
-            //chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
-             chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-3.3.0.0-QA-chrome.crx");
+             chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-3.6.0.0-QA-chrome.crx");
+           // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
+            // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-3.3.0.0-QA-chrome.crx");
 
             return new ChromeDriver(chromeOptions);
 
