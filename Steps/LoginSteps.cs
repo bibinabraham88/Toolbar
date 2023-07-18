@@ -64,8 +64,8 @@ namespace ToolbarTests.Steps
             _driver.WaitForElementVisible(_acceptCookies);
             _driver.Click(_acceptCookies);
             _driver.WaitForElementNotVisible(_acceptCookies);
-            _driver.SendKeys(_emailTextBox, "tcbtestteam@topcashback.co.uk");
-            _driver.SendKeys(_passwordBox, "Yadda123!");
+            _driver.SendKeys(_emailTextBox, res_en.us_en_username);
+            _driver.SendKeys(_passwordBox, res_en.password_en);
             _driver.Click(_loginBtn);
             _driver.AssertElementDisplayed(_accountLabelOnTopRightHandOnTCB);
         }
