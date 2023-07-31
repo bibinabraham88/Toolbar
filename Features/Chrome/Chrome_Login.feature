@@ -12,3 +12,7 @@ Background:
 Scenario: As a user I should see the toolbar pop up when I try to access it in Chrome
 	Then I should see the logged in toolbar
 
+Scenario: As I user I should be able to search for merchants
+    When I enter a merchant name 'Nike'
+    Then I should see the suggested list
+

@@ -11,7 +11,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.9.1" />
     <PackageReference Include="Selenium.WebDriver" Version="4.9.1" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="113.0.5672.6300" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="115.0.5790.10200" />
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.33.0" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="4.10.0" />
     <PackageReference Include="Selenium.WebDriver.MSEdgeDriver" Version="114.0.1823.58" />
@@ -21,21 +21,30 @@
     <PackageReference Include="nunit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.1.0" />
     <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="res_en.Designer.cs">
+    <Compile Update="res_uk.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>res_en.resx</DependentUpon>
+      <DependentUpon>res_uk.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="res_en.resx">
+    <EmbeddedResource Update="res_uk.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>res_en.Designer.cs</LastGenOutput>
+      <LastGenOutput>res_uk.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\bibinabraham\source\repos\Toolbar\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\bibinabraham\source\repos\Toolbar\.editorconfig" />
   </ItemGroup>
 
 </Project>

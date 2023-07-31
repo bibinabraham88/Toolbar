@@ -28,6 +28,7 @@ namespace ToolbarTests.Drivers
                     "no-sandbox",
                     "start-maximixed"
                     );
+                
                 chromeOptions.AddExtensions("C:/Users/bibinabraham/Downloads/tcb_build_2023_06_15/tcb_build_2023_06_15/Chrome_V3/tcb-uk-3.6.0.0-QA-chrome.crx");
                 return new ChromeDriver(chromeOptions);
             }

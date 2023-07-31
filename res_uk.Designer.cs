@@ -22,14 +22,14 @@ namespace ToolbarTests {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class res_en {
+    internal class res_uk {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal res_en() {
+        internal res_uk() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ToolbarTests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ToolbarTests.res_en", typeof(res_en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ToolbarTests.res_uk", typeof(res_uk).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,18 +63,18 @@ namespace ToolbarTests {
         /// <summary>
         ///   Looks up a localized string similar to Yadda123!.
         /// </summary>
-        internal static string password_en {
+        internal static string password {
             get {
-                return ResourceManager.GetString("password_en", resourceCulture);
+                return ResourceManager.GetString("password", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to tcbtestteam@topcashback.co.uk.
         /// </summary>
-        internal static string us_en_username {
+        internal static string username {
             get {
-                return ResourceManager.GetString("us_en_username", resourceCulture);
+                return ResourceManager.GetString("username", resourceCulture);
             }
         }
     }

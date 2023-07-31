@@ -21,6 +21,7 @@ namespace ToolbarTests.Steps
         private readonly By _joinButtonOnToolbar = By.CssSelector(".cta.welcome__button");
         private readonly By _loginBtn = By.Id("Loginbtn");
         private readonly By _bestDealsText = By.CssSelector(".tab__title");
+        private readonly By _searchBar = By.CssSelector(".search__input");
 
         public LoginSteps(ScenarioContext scenarioContext )
         {
@@ -64,8 +65,8 @@ namespace ToolbarTests.Steps
             _driver.WaitForElementVisible(_acceptCookies);
             _driver.Click(_acceptCookies);
             _driver.WaitForElementNotVisible(_acceptCookies);
-            _driver.SendKeys(_emailTextBox, res_en.us_en_username);
-            _driver.SendKeys(_passwordBox, res_en.password_en);
+            _driver.SendKeys(_emailTextBox, res_uk.username);
+            _driver.SendKeys(_passwordBox, res_uk.password);
             _driver.Click(_loginBtn);
             _driver.AssertElementDisplayed(_accountLabelOnTopRightHandOnTCB);
         }
@@ -76,6 +77,20 @@ namespace ToolbarTests.Steps
             _driver.FocusFirstWindow();
             _driver.AssertElementDisplayed(_bestDealsText);
         }
+
+        [When(@"I enter a merchant name '(.*)'")]
+        public void WhenIEnterAMerchantName(string p0)
+        {
+            _driver.Click(_searchBar);
+            _driver.SendKeys(_searchBar, "Nike");
+        }
+
+        [Then(@"I should see the suggested list")]
+        public void ThenIShouldSeeTheSuggestedList()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
     }
 }
