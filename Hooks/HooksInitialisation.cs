@@ -29,8 +29,8 @@ namespace ToolbarTests.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-
-            _driver = _seleniumDriver.Chrome();
+           
+            _driver = _seleniumDriver.Chrome(); // change browser 
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(100));
             Thread.Sleep(1000);
 

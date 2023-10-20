@@ -5,9 +5,11 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading;
 using TechTalk.SpecFlow;
+
 
 namespace ToolbarTests.Drivers
 {
@@ -32,25 +34,41 @@ namespace ToolbarTests.Drivers
                   "no-sandbox",
                  "start-maximixed"
                  );
-             chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-3.6.0.0-QA-chrome.crx");
-           // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
+
+            chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-chrome.crx");
+            // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
             // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-3.3.0.0-QA-chrome.crx");
 
             return new ChromeDriver(chromeOptions);
 
         }
-        //public IWebDriver Firefox()
-        //{
-        //    FirefoxOptions firefoxOptions = new FirefoxOptions();
-        //    firefoxOptions.AddArguments(
-        //        "enable-automation",
-        //        "enable-extensions",
-        //        "no-sandbox",
-        //        "start-maximixed"
-        //        );
-        //    firefoxOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
-        //    return new FirefoxDriver(firefoxOptions);
-        //}
+        public IWebDriver Firefox()
+        {
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.AddExtension("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-firefox.zip");
+            FirefoxOptions options = new FirefoxOptions
+            {
+                Profile = profile
+            };
+            IWebDriver driver = new FirefoxDriver(options);
+            return new FirefoxDriver(options);
+           
+        }
+
+       //     FirefoxProfile firefoxProfile = new FirefoxProfile();
+       //     firefoxprofile.AddArguments(
+       //                    "enable-automation",
+       //                    "enable-extensions",
+       //                     "no-sandbox",
+       //                     "start-maximixed"
+       //);
+       //     firefoxProfile.AddExtension("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
+       //     return new FirefoxDriver(firefoxProfile);
+       // }
+
+
+
+
         public IWebDriver Edge()
         {
             EdgeOptions edgeOptions = new EdgeOptions();
@@ -60,7 +78,7 @@ namespace ToolbarTests.Drivers
                 "no-sandbox",
                 "start-maximixed"
                 );
-            edgeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-3.3.0.0-QA-chrome.crx");
+            edgeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-chrome.crx");
             return new EdgeDriver(edgeOptions);
         }
     }
