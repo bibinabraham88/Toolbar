@@ -163,18 +163,18 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("03_As user I should able to search any mearchant")]
+        [NUnit.Framework.DescriptionAttribute("03_As user I should able to search any mearchant on toolbar")]
         [NUnit.Framework.TestCaseAttribute("Boots", null)]
         [NUnit.Framework.TestCaseAttribute("currys", null)]
         [NUnit.Framework.TestCaseAttribute("ebay", null)]
         [NUnit.Framework.TestCaseAttribute("asos", null)]
         [NUnit.Framework.TestCaseAttribute("Argos", null)]
-        public void _03_AsUserIShouldAbleToSearchAnyMearchant(string searchTerm, string[] exampleTags)
+        public void _03_AsUserIShouldAbleToSearchAnyMearchantOnToolbar(string searchTerm, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("SearchTerm", searchTerm);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03_As user I should able to search any mearchant", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03_As user I should able to search any mearchant on toolbar", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -194,6 +194,9 @@ this.FeatureBackground();
 #line 37
    testRunner.And(string.Format("I search mearchnt {0}", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 38
+   testRunner.Then("I should see search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -205,7 +208,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_As a user I should able to click on recently visited", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 48
+#line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -218,10 +221,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 50
+#line 51
          testRunner.Given("I try to open the toolbar extesion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 51
+#line 52
    testRunner.Then("I able to click on recently visited", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -240,7 +243,7 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("SearchTerm", searchTerm);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("05_As a user I should able to search mearchant on google", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 54
+#line 55
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -253,19 +256,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 56
+#line 57
            testRunner.Given("I open chrome browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 57
+#line 58
      testRunner.And("I click on Accepte all cookies button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 58
-     testRunner.And(string.Format("I search mearchnt {0}", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 59
-           testRunner.When("I click on google search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+     testRunner.And(string.Format("I search on google mearchnt {0}", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 60
+           testRunner.When("I click on google search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 61
     testRunner.Then("I shuld see topcashback tax with %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -279,7 +282,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06_As user I should able to click and see suggestion merchnat", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 69
+#line 70
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -292,11 +295,11 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 71
-         testRunner.When("I should see sucssesfully install extension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
+             testRunner.When("I should see sucssesfully install extension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 73
-   testRunner.And("I should able to click on suggestion merchant", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+       testRunner.And("I should able to click on suggestion merchant", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -309,7 +312,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("07_As user I should able to see and click on carousel", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 76
+#line 77
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -322,11 +325,110 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 78
-             testRunner.Given("I try to open the toolbar extesion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 79
-    testRunner.Then("I should able to click on carousel image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+              testRunner.Given("I try to open the toolbar extesion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 80
+       testRunner.Then("I should able to click on carousel image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("08_As user I should able to click on FAQ on browser extention")]
+        public void _08_AsUserIShouldAbleToClickOnFAQOnBrowserExtention()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("08_As user I should able to click on FAQ on browser extention", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 82
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line hidden
+#line 84
+              testRunner.Given("I should see sucssesfully install extension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 85
+        testRunner.Then("I should able to click on FAQlink page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("09_As user I should able to cick 0n Offer link")]
+        public void _09_AsUserIShouldAbleToCick0NOfferLink()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("09_As user I should able to cick 0n Offer link", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 87
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line hidden
+#line 89
+               testRunner.Given("I should see sucssesfully install extension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 90
+         testRunner.And("I should able to click on offer link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 91
+         testRunner.Then("I should able to see offer page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("10_As user I should able logout toolbar account")]
+        public void _10_AsUserIShouldAbleLogoutToolbarAccount()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("10_As user I should able logout toolbar account", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 93
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line hidden
+#line 95
+             testRunner.Given("I should see sucssesfully install extension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 96
+    testRunner.And("I click on account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 97
+    testRunner.And("I click on sign out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 98
+    testRunner.Then("I should able to see logout page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

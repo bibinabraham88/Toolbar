@@ -36,8 +36,8 @@ namespace ToolbarTests.Drivers
                  );
 
             chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-chrome.crx");
-            // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
-            // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-3.3.0.0-QA-chrome.crx");
+           //  chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-2.2.0.0-QA-chrome.crx");
+            // chromeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-4.2.0.0-QA-chrome.crx");
 
             return new ChromeDriver(chromeOptions);
 
@@ -45,29 +45,17 @@ namespace ToolbarTests.Drivers
         public IWebDriver Firefox()
         {
             FirefoxProfile profile = new FirefoxProfile();
-            profile.AddExtension("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-firefox.zip");
+            profile.AddExtension("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-firefox.xpi");
             FirefoxOptions options = new FirefoxOptions
             {
                 Profile = profile
             };
             IWebDriver driver = new FirefoxDriver(options);
             return new FirefoxDriver(options);
+            
            
         }
-
-       //     FirefoxProfile firefoxProfile = new FirefoxProfile();
-       //     firefoxprofile.AddArguments(
-       //                    "enable-automation",
-       //                    "enable-extensions",
-       //                     "no-sandbox",
-       //                     "start-maximixed"
-       //);
-       //     firefoxProfile.AddExtension("C:/Users/divyeshsavaliya/Downloads/tcb-de-1.2.0.0-QA-chrome.crx");
-       //     return new FirefoxDriver(firefoxProfile);
-       // }
-
-
-
+     
 
         public IWebDriver Edge()
         {
@@ -78,7 +66,9 @@ namespace ToolbarTests.Drivers
                 "no-sandbox",
                 "start-maximixed"
                 );
-            edgeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-chrome.crx");
+          //  edgeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-uk-4.1.0.1-QA-chrome.crx");
+           //  edgeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-de-2.1.0.1-QA-chrome.crx");
+             edgeOptions.AddExtensions("C:/Users/divyeshsavaliya/Downloads/tcb-us-3.3.0.0-QA-chrome.crx");
             return new EdgeDriver(edgeOptions);
         }
     }

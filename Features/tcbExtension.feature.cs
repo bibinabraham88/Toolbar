@@ -102,13 +102,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I click on Accept cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 12
- testRunner.When("I fills-in mailbox field with \"  \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I fills-in mailbox field with new user \"tcbtestteam+0312@topcashback.co.uk \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.And("I fills-in password field with \"Yadda123!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I fills-in password field with new user \"Yadda123!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
- testRunner.And("I click on join free button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click on join free button new user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
  testRunner.Then("I should see sucssesfully install extension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
