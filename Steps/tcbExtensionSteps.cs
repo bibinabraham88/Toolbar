@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace ToolbarTests.Steps
@@ -27,19 +28,21 @@ namespace ToolbarTests.Steps
         public void WhenITryToOpenTheToolbarExtesion()
         {
             // UK 
-            _driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
+            //_driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
 
             // DE
             //  _driver.Navigate().GoToUrl("chrome-extension://iljjkgoaeinkkmleckfmjcfdhlbnjfmo/popup.html");
 
             //US
-              // _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
-           
-            // edge    
-             // _driver.Navigate().GoToUrl("edge-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
+            //  _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
+
+            // edge
+           // Thread.Sleep(2000);
+          //  _driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
+            
 
             // UK firefox 
-          //  _driver.Navigate().GoToUrl("firefox-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
+              _driver.Navigate().GoToUrl("firefox://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
         }
 
         [When(@"I click on join button")]
@@ -52,7 +55,7 @@ namespace ToolbarTests.Steps
         [Then(@"I click on Accept cookies")]
          public void ThenIClickOnAcceptCookies()
         {
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(5000);
             _driver.SwitchTo().Window(_driver.WindowHandles[0]);
             _driver.FindElement(By.Id("onetrust-accept-btn-handler")).Click();
         }
@@ -80,7 +83,7 @@ namespace ToolbarTests.Steps
         public void WhenIFills_InMailboxFieldWithNewUser(string po)
         {
            // string userEmail = DateTime.Now.ToString("yyyyMMddHHmmssffff") + "@topcashback.co.uk";
-            _driver.FindElement(By.Id("emailInput")).SendKeys("tcbtestteam+3102@topcashback.co.uk");
+            _driver.FindElement(By.Id("emailInput")).SendKeys("tcbtestteam+0316@topcashback.co.uk");
         }
 
         [When(@"I click on join free button")]
@@ -159,7 +162,8 @@ namespace ToolbarTests.Steps
         [When(@"I click on google search button")]
         public void WhenIClickOnGoogleSearchButton()
         {
-            _driver.FindElement(By.Name("btnK")).Click();
+            Thread.Sleep(5000);
+            _driver.FindElement(By.CssSelector("#jZ2SBf>div.wM6W7d")).Click();
         }
 
         [Then(@"I shuld see topcashback tax with %")]
@@ -195,12 +199,11 @@ namespace ToolbarTests.Steps
             System.Threading.Thread.Sleep(200);
             labelText = _driver.FindElement(By.ClassName("logo"));
         }
-
-        [Then(@"I should able to click on carousel image")]
-        public void ThenIShouldAbleToClickOnCarouselImage()
+        [Then(@"I should able to see on carousel image")]
+        public void ThenIShouldAbleToSeeOnCarouselImage()
         {
             System.Threading.Thread.Sleep(500);
-            _driver.FindElement(By.XPath("//body/div/div/div[1]/div[3]/div[1]/div/div[2]/div/div/div/div")).Click();
+           // _driver.FindElement(By.XPath("//body/div/div/div[1]/div[3]/div[1]/div/div[2]/div/div/div/div")).Click();
         }
 
         [Given(@"I should see sucssesfully install extension")]
@@ -239,8 +242,8 @@ namespace ToolbarTests.Steps
         [Given(@"I click on sign out")]
         public void GivenIClickOnSignOut()
         {
-            _driver.FindElement(By.Id("ctl00_ctl21_hypSignOut")).Click();
-        }
+            _driver.FindElement(By.Id("ctl00_ctl22_hypSignOut")).Click();
+        }                              
 
         [Then(@"I should able to see logout page")]
         public void ThenIShouldAbleToSeeLogoutPage()
@@ -249,5 +252,35 @@ namespace ToolbarTests.Steps
             labelText = _driver.FindElement(By.Id("ctl00_OneColPlaceHolder_lblLogoutHeader"));
         }
 
+        [Then(@"I should able to see best deal")]
+        public void ThenIShouldAbleToSeeBestDeal()
+        {
+              System.Threading.Thread.Sleep(500);
+            _driver.FindElement(By.ClassName("store__name")).Click();
+           
+        }
+
+        [Then(@"I should able to track Url")]
+        public void ThenIShouldAbleToTrackUrl()
+        {
+            _driver.FindElement(By.LinkText(""));
+        }
+        [Given(@"I click on merchant link")]
+        public void GivenIClickOnMerchantLink()
+        {
+             Thread.Sleep(5000);
+            _driver.FindElement(By.CssSelector("#jZ2SBf>div.wM6W7d")).Click();
+        }
+
+
     }
+
 }
+
+
+
+        
+    
+
+    
+

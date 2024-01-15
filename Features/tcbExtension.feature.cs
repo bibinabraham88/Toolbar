@@ -74,14 +74,14 @@ namespace ToolbarTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("As a user I should able to instrall toolbar extension")]
+        [NUnit.Framework.DescriptionAttribute("New user instrall toolbar extension")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public void AsAUserIShouldAbleToInstrallToolbarExtension()
+        public void NewUserInstrallToolbarExtension()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I should able to instrall toolbar extension", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New user instrall toolbar extension", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I click on Accept cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 12
- testRunner.When("I fills-in mailbox field with new user \"tcbtestteam+0312@topcashback.co.uk \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I fills-in mailbox field with new user \"tcbtestteam+0316@topcashback.co.uk \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
  testRunner.And("I fills-in password field with new user \"Yadda123!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
