@@ -28,10 +28,10 @@ namespace ToolbarTests.Steps
         public void WhenITryToOpenTheToolbarExtesion()
         {
             // UK 
-            //_driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
+            _driver.Navigate().GoToUrl("chrome-extension://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
 
             // DE
-            //  _driver.Navigate().GoToUrl("chrome-extension://iljjkgoaeinkkmleckfmjcfdhlbnjfmo/popup.html");
+             // _driver.Navigate().GoToUrl("chrome-extension://iljjkgoaeinkkmleckfmjcfdhlbnjfmo/popup.html");
 
             //US
             //  _driver.Navigate().GoToUrl("chrome-extension://cbmmlcaooffjnkagiglmnebjpkekhnag/popup.html");
@@ -42,7 +42,7 @@ namespace ToolbarTests.Steps
             
 
             // UK firefox 
-              _driver.Navigate().GoToUrl("firefox://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
+            //  _driver.Navigate().GoToUrl("firefox://mpkbmnhnhfdmhnkblpjlaadamhajnmbo/popup.html");
         }
 
         [When(@"I click on join button")]
@@ -50,14 +50,14 @@ namespace ToolbarTests.Steps
         {
             System.Threading.Thread.Sleep(5000);
               _driver.FindElement(By.CssSelector(".cta.welcome__button")).Click();          
-        }     
+        }
 
         [Then(@"I click on Accept cookies")]
-         public void ThenIClickOnAcceptCookies()
+        public void ThenIClickOnAcceptCookies()
         {
             System.Threading.Thread.Sleep(5000);
-            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
-            _driver.FindElement(By.Id("onetrust-accept-btn-handler")).Click();
+              _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+              _driver.FindElement(By.Id("onetrust-accept-btn-handler")).Click();
         }
 
         [When(@"I fills-in mailbox field with ""(.*)""")]
@@ -272,6 +272,19 @@ namespace ToolbarTests.Steps
             _driver.FindElement(By.CssSelector("#jZ2SBf>div.wM6W7d")).Click();
         }
 
+        [When(@"I click on merchant link")]
+        public void WhenIClickOnMerchantLink()
+        {
+            Thread.Sleep(5000);
+            _driver.FindElement(By.ClassName("VuuXrf")).Click();
+        }
+        [When(@"I should able to click and see white popup")]
+        public void WhenIShouldAbleToClickAndSeeWhitePopup()
+        {
+            Thread.Sleep(200);
+            var element = _driver.FindElement(By.XPath("//*[@class='button-wrapper']//div"));
+            element.Click();
+        }
 
     }
 

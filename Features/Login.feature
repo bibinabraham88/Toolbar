@@ -12,7 +12,7 @@ Background:
 	Given I try to open the toolbar extesion
 	When I click on join button
 	Then I click on Accept cookies
-	When  I fills-in mailbox field with "tcbtestteam@topcashback.co.uk  "
+	When  I fills-in mailbox field with "tcbtestteam@topcashback.co.uk"
 	And I fills-in password field with "Yadda123!"
 	And I click on join free button
 	Then I should see sucssesfully install extension
@@ -57,8 +57,11 @@ Scenario: 05_ search mearchant on google
            Given I open chrome browser 
 		   And I click on Accepte all cookies button 
 		   And I search on google mearchnt <SearchTerm> 
-           When I click on google search button 
-		  Then I shuld see topcashback tax with % 
+           When I click on google search button
+		   Then I shuld see topcashback tax with %
+		  # And I click on merchant link
+		 #  And I click on active cashback on popup
+		    
 Examples:
 | SearchTerm |
 | Nike       |
@@ -104,7 +107,7 @@ Scenario: 10_ logout toolbar account
 Scenario: 11_ see best deal 
 
           Given I try to open the toolbar extesion
-		  # Need to check in BO and add mercant 
+		  # Need to add mercant in BO and check  
 		  Then I should able to see best deal 
 
 Scenario: 12_ Fingerpring track
@@ -113,13 +116,29 @@ Scenario: 12_ Fingerpring track
 		  Then I should able to track Url 
 
 
-Scenario: 13_Autocoupon apply 
+#Scenario: 13_Autocoupon apply 
+#
+#           Given I open chrome browser 
+#		   And I click on Accepte all cookies button 
+#		   And I search on google mearchnt <SearchTerm> 
+#           And I click on merchant link          
+#
+#Examples:
+#| SearchTerm |
+#| Nike       |
+
+Scenario: 14_able to see green popup 
 
            Given I open chrome browser 
 		   And I click on Accepte all cookies button 
 		   And I search on google mearchnt <SearchTerm> 
-           And I click on merchant link          
-
+           When I click on google search button
+		   And I click on merchant link
+		   And I should able to click and see white popup 
+		   
 Examples:
 | SearchTerm |
 | Nike       |
+| currys     |
+| Argos      |
+| asos       |
