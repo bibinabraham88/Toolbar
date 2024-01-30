@@ -1,5 +1,5 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
+using System;
 using ToolbarTests.Drivers;
 using OpenQA.Selenium;
 using System.Collections.Generic;
@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using System.Threading;
 using FluentAssertions;
 using Helpers;
+using System.Configuration;
 
 namespace ToolbarTests.Hooks
 {
@@ -25,15 +26,14 @@ namespace ToolbarTests.Hooks
             _seleniumDriver = seleniumDriver;
 
         }
-
-        [Given(@"I try to open the '(.*)' browser")]
-        public void GivenITryToOpenTheBrowser(string browser)
+        [Given(@"I try to open the browser")]
+        public void GivenITryToOpenTheBrowser()
         {
-            _driver = _seleniumDriver.SetUp(browser);
+            _driver = _seleniumDriver.SetUp(ConfigurationManager.AppSettings["browser"]);
             _driver.Manage().Window.Maximize();
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             Thread.Sleep(1000);
-            var newWindowHandle = _driver.WindowHandles[1];
+            var newWindowHandle = _driver.WindowHandles[0];
             if (_driver.WindowHandles.Count == 2)
             {
                 _driver.SwitchTo().Window(newWindowHandle);
@@ -60,8 +60,8 @@ namespace ToolbarTests.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            //_driver.Quit();
-            //Console.WriteLine("Browser was closed successfully");
+        //    _driver.Quit();
+        //    Console.WriteLine("Browser was closed successfully");
         }
     }
 }
